@@ -151,9 +151,11 @@ launchctl kickstart -k gui/$(id -u)/com.nanoclaw  # macOS
 
 Tell the user:
 
-> Send a message like: "use unraidclaw_health to check if the Unraid server is up"
+> Send a message like: "use mcp__unraidclaw__unraidclaw_health to check if the Unraid server is up"
 >
-> The agent should call `unraidclaw_health` and return the status JSON from your Unraid server.
+> The agent should call `mcp__unraidclaw__unraidclaw_health` and return the status JSON from your Unraid server.
+>
+> All UnraidClaw tools follow the pattern `mcp__unraidclaw__unraidclaw_<toolname>` — for example `mcp__unraidclaw__unraidclaw_docker_list`, `mcp__unraidclaw__unraidclaw_array_status`, etc.
 
 ### Check logs if needed
 
@@ -161,7 +163,7 @@ Tell the user:
 tail -f logs/nanoclaw.log | grep -i unraidclaw
 ```
 
-Look for tool calls like `mcp__unraidclaw__health` appearing in agent output.
+Look for tool calls like `mcp__unraidclaw__unraidclaw_health` appearing in agent output.
 
 ## Troubleshooting
 
